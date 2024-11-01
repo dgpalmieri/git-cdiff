@@ -15,15 +15,16 @@ Show `git diff`s for different types of
 gcdiff HEAD~5..HEAD~15 --include="docs","chore"
 ```
 
-This is a diff over all commits between `HEAD~5` and `HEAD~15` that are prefixed with
-`docs*:`. This includes tags like `docs(readability):` and `chore(depencdecies)`.
+Show a diff over all commits between `HEAD~5` and `HEAD~15` that are prefixed with
+`docs*:` or `chore*:`. This includes tags like `docs(readability):` and `chore(dependencies):`
+in the diff.
 
 ```bash
 gcdiff HEAD~10 --exclude="test"
 ```
 
-This is a diff over all commits between `HEAD` and `HEAD~10` that are __not__ prefixed with
-`test*:`. This includes tags like `test(remote):` and `test(ci/cd):`.
+Show a diff over all commits between `HEAD` and `HEAD~10` that are __not__ prefixed with
+`test*:`. This excludes tags like `test(remote):` and `test(ci/cd):` from the diff.
 
 ```bash
 gcdiff HEAD~3 --exclude="test" --iterative
